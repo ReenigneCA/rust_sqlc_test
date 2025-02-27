@@ -1,0 +1,21 @@
+version: "2"
+plugins:
+  - name: sqlc-gen-from-template
+    process:
+      cmd: "sqlc-gen-from-template"
+sql:
+  - engine: "sqlite"
+    queries: "sql/queries"
+    schema: "sql/migrations"
+    codegen:
+      - out: "src/"
+        plugin: "sqlc-gen-from-template"
+        options:
+          template: "rust_rusqlite.go.tmpl"
+          filename: "queries.rs"
+          cache_statements: true
+          # optional formatter command to format generated code
+          # the command needs to read from stdin and write to stdout
+          # so rustfmt is not suitable
+          #formatter_cmd: ""
+          use_serde: true
