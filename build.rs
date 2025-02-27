@@ -1,12 +1,8 @@
-use std::env;
-// build.rs
 use std::process::Command;
 
 fn main() {
-    if env::var("CARGO_INTELLIJ_RUST_SUPPORT").is_ok() {
-        return;
-    }
-
+    println!("cargo:rerun-if-changed=sql");
+    
     let mut cmd = Command::new("sqlc");
     let mut fmtcmd = Command::new("./rustfmt.sh");
 
