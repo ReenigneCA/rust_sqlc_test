@@ -7,7 +7,7 @@ To use this template
 
 - install sqlc [sqlc install instructions ](https://docs.sqlc.dev/en/stable/overview/install.html)
 - install sqlc-gen-template with support for the included template
-  - `git clone https://github.com/ReenigneCA/sqlc-gen-from-template.git`
+  - `git clone https://github.com/fdietze/sqlc-gen-from-template.git`
   - ensure you have the go compiler installed [go install instructions](https://go.dev/doc/install)
   - navigate to the created folder and run `go install`  
 - clone the repo `git clone https://github.com/ReenigneCA/rust_sqlc_test.git`
